@@ -210,6 +210,18 @@ body {
     transform: translateY(0);
 }
 
+.added-to-bookshelf {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: 1px solid #1faa59;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #1faa59;
+    background-color: #f0f0f0;
+    align-self: center;
+    text-align: center;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .navbar-container {

@@ -1,9 +1,11 @@
 import React from 'react'
 import "../index.css";
 
-function Card({ book, handleClick, buttonText }) {
+function Card({ book, handleClick, buttonText, bookshelf = [] }) {
 
-    const { title, author_name, first_publish_year, edition_count, publisher } = book;
+    const { title, author_name, first_publish_year, edition_count, publisher, key } = book;
+
+    const isInBookshelf = bookshelf.some(item => item.key === key);
 
     return (
         <div className='card'>
@@ -19,9 +21,18 @@ function Card({ book, handleClick, buttonText }) {
                 </div>
             </div>
 
-            <button className={ (buttonText==="Add to Bookshelf") ? 'btn-add-bookshelf' : 'btn-red'} onClick={() => handleClick(book)}>
-                {buttonText}
-            </button>
+            {
+                (!isInBookshelf) && (
+                    <button className={(buttonText === "Add to Bookshelf") ? 'btn-add-bookshelf' : 'btn-red'} onClick={() => handleClick(book)}>
+                        {buttonText}
+                    </button>
+                )
+            }
+
+            {(buttonText === "Add to Bookshelf" && isInBookshelf) && (
+                <span className='added-to-bookshelf'>Added to bookshelf</span>
+            )}
+
         </div>
     )
 }

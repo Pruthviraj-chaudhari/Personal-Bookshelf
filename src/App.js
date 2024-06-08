@@ -61,7 +61,7 @@ const App = () => {
     <div>
       <Navbar onSearch={handleSearch} query={query} />
       <Routes>
-        <Route path="/" element={<BookSearch initialBooks={books} onAddToBookshelf={addToBookshelf} message={message} />} />
+        <Route path="/" element={<BookSearch initialBooks={books} bookshelf={bookshelf} onAddToBookshelf={addToBookshelf} message={message} />} />
         <Route path="/bookshelf" element={<Bookshelf bookshelf={bookshelf} onRemoveFromBookshelf={removeFromBookshelf} />} />
       </Routes>
     </div>
