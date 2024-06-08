@@ -19,7 +19,7 @@ function BookSearch({initialBooks = [], initialQuery, onAddToBookshelf, message}
             <div className="cards-container">
                 {
                     initialBooks.map((book) => (
-                        <Card key={book.key} book={book} onAddBook={onAddToBookshelf} />
+                        <Card key={book.key} book={book} handleClick={onAddToBookshelf} buttonText={"Add to Bookshelf"} />
                     ))
                 }
             </div>

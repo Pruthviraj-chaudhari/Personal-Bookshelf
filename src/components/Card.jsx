@@ -1,7 +1,7 @@
 import React from 'react'
 import "../index.css";
 
-function Card({ book, onAddBook }) {
+function Card({ book, handleClick, buttonText }) {
 
     const { title, author_name, first_publish_year, edition_count, publisher } = book;
 
@@ -19,8 +19,8 @@ function Card({ book, onAddBook }) {
                 </div>
             </div>
 
-            <button className='btn-add-bookshelf' onClick={() => onAddBook(book)}>
-            Add to Bookshelf
+            <button className={ (buttonText==="Add to Bookshelf") ? 'btn-add-bookshelf' : 'btn-red'} onClick={() => handleClick(book)}>
+                {buttonText}
             </button>
         </div>
     )

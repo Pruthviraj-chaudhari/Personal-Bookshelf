@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import axios from "axios";
 import Bookshelf from "./pages/Bookshelf";
 import useDebounce from "./hooks/useDebounce";  // Import the debounce hook
+import { toast } from "sonner";
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -16,18 +17,20 @@ const App = () => {
     return storedBooks;
   });
 
-  const debouncedQuery = useDebounce(query, 600);  // Use the debounce hook with a delay of 300ms
+  const debouncedQuery = useDebounce(query, 600);
 
   const addToBookshelf = (book) => {
     const updatedBookshelf = [...bookshelf, book];
     setBookshelf(updatedBookshelf);
     localStorage.setItem('bookshelf', JSON.stringify(updatedBookshelf));
+    toast.success("Added to bookshelf")
   };
 
   const removeFromBookshelf = (bookKey) => {
     const updatedBookshelf = bookshelf.filter(book => book.key !== bookKey);
     setBookshelf(updatedBookshelf);
     localStorage.setItem('bookshelf', JSON.stringify(updatedBookshelf));
+    toast.success("Book Removed")
   };
 
   useEffect(() => {
