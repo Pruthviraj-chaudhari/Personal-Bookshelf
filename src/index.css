@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Poppins");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-size: 3rem;
+    margin: 6vh;
+    border: 7px dashed #895151;
+    border-radius: 20px;
+    padding: 1vh 5vw;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 400px; /* Set a fixed width */
+    min-height: 300px; /* Set a minimum height */
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: start;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.image {
+    width: 380px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.book-info {
+    flex: 1; /* Allow the book-info section to grow to fill the available space */
+    display: flex;
+    flex-direction: column;
+}
+
+.book-title {
+    color: #895151;
+    font-size: 2rem;
+}
+
+.book-author {
+    font-size: 1.1rem;
+    color: #1faa59;
+}
+
+.description {
+    cursor: default;
+    flex: 1; /* Allow the description section to grow to fill the available space */
+    
+}
+
+.read-more {
+    color: #12b0e8;
+    cursor: pointer;
+}
+
+.btn-red {
+    margin-top: 18px;
+    padding: 10px 80px;
+    border: 1px solid #b4161b;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #b4161b21;
+}
+
+.btn-red:hover {
+    background-color: rgb(180, 112, 112);
+    color: white;
+    transition: all 0.2s;
+}
+
+.refresh {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.btn-white {
+    margin-top: 18px;
+    padding: 10px 80px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.btn-white:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.2s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card {
+        width: 300px;
+    }
+
+    .image {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        margin: 4vh;
+        padding: 1vh 3vw;
+    }
+
+    .card {
+        width: 90%;
+        margin: 0.5rem;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .btn-red, .btn-white {
+        padding: 10px 50px;
+        font-size: 16px;
+    }
+}
+
+.navbar {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-container {
+    max-width: 1300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-title {
+    font-family: "Fraunces", serif;
+    font-size: 2rem;
+    color: #895151;
+}
+
+.search-bar {
+    flex-grow: 1;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.btn-my-bookshelf {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1faa59;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-end; /* Align the button to the end of the flex container */
+    margin-top: auto; 
+}
+
+.btn-my-bookshelf:hover {
+    background-color: #148c45;
+    transform: translateY(-2px);
+}
+
+.btn-my-bookshelf:active {
+    background-color: #136e39;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar {
+        margin: 0.5rem 0;
+        width: 90%;
+    }
+
+    .btn-my-bookshelf {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-title {
+        font-size: 1.5rem;
+    }
+
+    .search-bar {
+        font-size: 0.9rem;
+    }
+
+    .btn-my-bookshelf {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+
+.btn-add-bookshelf {
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1faa59; /* Green color */
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-add-bookshelf:hover {
+    background-color: #148c45; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow on hover */
+}
+
+.btn-add-bookshelf:active {
+    background-color: #136e39; /* Even darker green when active */
+    transform: translateY(0); /* Reset lift effect */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+
+.custom-loader {
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:conic-gradient(#0000 10%,#1FAA59);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+    animation:s3 0.5s infinite linear;
+  }
+  @keyframes s3 {to{transform: rotate(1turn)}}
